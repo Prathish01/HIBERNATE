@@ -1,0 +1,79 @@
+package hibernate.dto;
+
+import java.util.Scanner;
+
+import hibernate.dao.Coursedao;
+import hibernate.dao.Studentdao;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+	public class Studentdto
+	{
+
+	private static Scanner sc;
+
+	public static void purchaseCourse() {
+
+	    sc = new Scanner(System.in);
+	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("development");
+	    EntityManager em = emf.createEntityManager();
+	    EntityTransaction tx = em.getTransaction();
+
+	    System.out.print("Enter student id: ");
+	    int sid = sc.nextInt();
+
+	    Studentdao st = em.find(Studentdao.class, sid);
+
+	    if (st == null) {
+	        System.out.println(" Student not found");
+	        em.close();
+	        emf.close();
+	        return;
+	    }
+
+	    System.out.print("Enter course id: ");
+	    int cid = sc.nextInt();
+
+	    Coursedao cr = em.find(Coursedao.class, cid);
+	    if (cr == null) {
+	        System.out.println("Course not found");
+	        em.close();
+	        emf.close();
+	        return;
+	    }
+
+	    try {
+	        tx.begin();
+	        st.setListOfCOurse(cr);
+	        em.merge(st);
+	        tx.commit();
+	        System.out.println(" Course purchased successfully");
+	    } catch (Exception e) {
+	        tx.rollback();
+	        e.printStackTrace();
+	    } finally {
+	        em.close();
+	        emf.close();
+	    }
+	}
+	public static void insertStudentdao(int StudentId,String name,String email,String contact,String passsword)
+	{
+	EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
+	EntityManager manager = factory.createEntityManager();
+	EntityTransaction transaction = manager.getTransaction();
+
+
+
+	Studentdao student = new Studentdao();
+	student.setStudentId(StudentId);
+	student.setName(name);
+	student.setEmail(email);
+	student.setContact(contact);
+	student.setPassword(passsword);
+	transaction.begin();
+	manager.persist(student);
+	transaction.commit();
+	}
+	}
+
