@@ -1,0 +1,45 @@
+package hibernate.dao;
+	import jakarta.persistence.Entity;
+	import jakarta.persistence.Id;
+
+	@Entity
+	public class Coursedao 
+	{
+		@Id
+	private int courseID;
+	private String name;
+	private String fees;
+	private String duration;
+	private String type;
+	public int getCourseID() {
+		return courseID;
+	}
+	public void setCourseID(int courseID) {
+		this.courseID = courseID;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getFees() {
+		return fees;
+	}
+	public void setFees(String fees) {
+		this.fees = fees;
+	}
+	public String getDuration() {
+		return duration;
+	}
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	}
