@@ -1,0 +1,28 @@
+package hibernate.dto;
+	import java.util.Scanner;
+	import hibernate.dao.Coursedao;
+	import jakarta.persistence.EntityManager;
+	import jakarta.persistence.EntityManagerFactory;
+	import jakarta.persistence.EntityTransaction;
+	import jakarta.persistence.Persistence;
+
+	public class Coursedto 
+	{
+		Scanner scn = new Scanner(System.in);
+		static EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
+		static EntityManager manager = factory.createEntityManager();
+		static EntityTransaction transaction = manager.getTransaction();
+	public void insertdata(int courseID,String name,String fees,String duration,String type)
+	{
+	Coursedao cr = new Coursedao();
+	cr.setCourseID(courseID);
+	cr.setName(name);
+	cr.setFees(fees);
+	cr.setDuration(duration);
+	cr.setType (type);
+	transaction.begin();
+	manager.persist(cr);
+	transaction.commit();
+	}
+	}
+
