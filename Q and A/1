@@ -1,0 +1,68 @@
+1, FrameWork:
+It is collection of classes of predefined code that allows developers to add them to their own code to solve a problem.
+It provides required functionality to build and deploy an application.
+Ex:Hibernate & Spring. 
+
+---------------------------------------------------------------------------
+2, Hibernate 
+It is a java framework .
+It was started in 2001 by Galvin King.
+It was built as an alternate for JDBC
+It simplifies the development of java applications to interact with the database.
+It is an open source,ORM(Object Relational Mapping) tool.
+-------------------------------------------------------------------------
+
+3, Hibernate Over JDBC
+
+--Hibernate provides inbuilt methods for performing the database operations which makes the application development easy and fast.
+
+--Hibernate never throws Checked Exception.So hibernate handles all checked exception by itself
+	JDBC throws checked exception.
+
+--Hibernate framework provides facility to create tables of the database automatically.So there is no need to create tables in the database manually 
+but in JDBC table should be created manually.
+
+--Hibernate provides the facility for generating integer id values automatically.
+
+--Fetching data from multiple tables is easy in hibernate framework, not in JDBC.
+
+--Hibernate is Database Independent where as JDBC is Database Dependent.
+	Hibernate make use of HQL.
+	HQL(Hibernate Query Language) is the object-oriented version of SQL.
+It generates the database independent queries.So no need to write database specific queries.
+
+--The performance of hibernate is fast compare to JDBC.
+
+-----------------------------------------------------------------
+4, In hibernate how data will be stored?
+	In the form of of an object,whereas in JDBC data will be stored in form of values.
+	In hibernate :  java----Objects----Database
+	In JDBC :           java-----Objects----Values----Database.
+----------------------------------------------------------------------
+5, ORM Tool
+An ORM tool simplifies the data creation, data manipulation and data access.It is  a programming technique that maps the object to the data stored in the database.
+It internally uses JDBC API to interact with database.
+
+ Java Application-----Object-----ORM tool(Hibernate)-------JDBC API------Database.
+
+In hibernate ,the class is connected to table and the variable are connected to colums of table and each object is placed in form of rows.
+--------------------------------------------------------------------
+6, Steps to create Hibernate Project:-
+1.Create simple maven project
+2.In pom.xml add 2 dependency i.e hibernate core and mysql dependency.
+3.Create database in mysql workbench.
+4.In main/src/resources create a folder called META-INF
+	inside this folder create file called persistence.xml.
+5.In persistence.xml file we have to set database name,user and password.
+-----------------------------------------------------------------------------
+7, Entity class
+the java classes whose object will be stored in the database are called as Entity class.
+
+Rules to create an Entity class
+--class should be annotated with @Entity
+--entity class must have one primary key( id )to a row  for easy identification of objects  and annotated with @Id 
+--class must be public non abstract class.
+--class should have public zero parameterized constructor or public default constructor.
+--for every variable of entity class there should be public getter and setter methods.
+
+===================================================================================================
