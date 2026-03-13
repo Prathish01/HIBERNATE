@@ -1,0 +1,143 @@
+8. Components of Hibernate JPA framework.
+
+Persistence. 
+The persistence class loads the startup instruction of the application.
+It consists of method called create entity manager factory which accepts persistent unit name as a input 
+once the persistence file is loaded.This method return an object of EntityManagerFactory. 
+
+EntityManagerFactory. 
+It is an interface used to interact with entity managers for the given persistence unit. An entity manager factory type object is created for a specific database.
+It consists of method called create entity manager which creates and returns an object of entity manager type.
+
+EntityManager.
+It is an interface used to allow the application to manage and search for the object in the database.
+The Entity manager interface manages the lifecycle of entity.
+Entity Manager interface consists of the following methods persist(), remove(),merge(), find(), createQuery(), getTransaction().
+
+--persist(object)-- It is used to insert an object into the database. 
+--remove(object)--- It is used to delete an object from the database. 
+--merge(object)--- It is used to update the states of the given object into the existing object. 
+--find(entity className.class,primarykey values)-- it is used to search for an object based on primary Key value 
+--createQuery(string hql/jpql query)----It is used to create an object of query type for executing a HQL  or JPQL query 
+--getTransaction()--It is used to create and return an object of entity transaction type.
+
+EntityTransaction
+It is an interface which is used to control the transaction on the entity manager. 
+It consists of the following methods. 
+
+begin()----- it is used to start the transaction.
+commit()----  ends the current transaction  and saves the changes in database.
+-------------------------------------------------------------------------------------------------------------------------------
+9. Query:
+It is an interface and the object of Query Interface type is used for storing HQL or JPQL Query.
+The object of Query interface can be obtained by calling the createQuery() method present in 
+EnrtityManager Interface.
+The object of Query interface can be used for executing HQL/JPQL Queries.
+
+It has  method called---
+getResultList() : It is used to execute a select query that return the result as list(from java.util package).
+
+10. JPQL:
+JPQL stands for Java Persistence Query Language.
+It is a Query Language defined in JPA specifications.
+JPQL is an object oriented version of SQL.
+It is a used to create Queries to be executed against Relational Database.
+It is a database independent query language.
+EntityManager createQuery() method supports HQL/JPQL Queries.
+---------------------------------------------------------------------------------------------------------------------
+11. Mapping
+It is one of the key features in hibernate. 
+It is used to establish connection between 2 tables.
+In hibernate we can achieve mapping in four ways. 
+They are 
+one to one mapping,
+one to many mapping, 
+many to one mapping, 
+many to many mapping. 
+
+12. One to one mapping ---------
+is nothing but one single entity is associated with single instance of another entity.
+We can achieve one to one mapping with the help of annotation called @OneToOne
+
+13. One too many ----------
+the one row in a table is mapped with multiple rows in another table is called as one to many mapping. 
+We can achieve one to many mapping with the help of annotation called @OneToMany
+
+14. Many to one mapping ----------
+many rows in the table is mapped with single row in another table. 
+We can achieve this using annotation @ManyToOne
+
+15. many to many mapping ------------
+many rows in a table mapped with multiple rows in another table. 
+This is achieved using annotation @ManyToMany
+---------------------------------------------------------------------------------------------------------------------------------
+16. Annotations 
+They are piece of text which provides some information to the compiler and JVM.
+It is used to give information about class,methods,interfaces and variables.
+
+17. @Entity
+It is used on class.
+It specifies that class can be mapped to the table into the database.
+It specifies that class is an entity class.
+
+18. @Id
+It is used on Variable.
+It specifies the below variable is the primary key for the current entity.
+
+19. @GeneratedValue
+This annotation is used along with @Id annotation to automatically generate unique values for primary key column within the database table.
+When we apply this annotation to primary key ,it will interact with hibernate to automatically generate unique value for that field during the process of persisting the entity into the database.
+It provides different strategies to generate such as AUTO,IDENTITY,TABLE,SEQUENCE.
+For MySql database we prefer IDENTITY.
+
+20. @Table 
+It is used on entity class.
+This annotation allows an attribute called name,this is used to override the tablename in the database.  Ex @Table(name="my_tableName")
+
+21. @Column
+It is used on variables.
+This is used to modify the columns in the database table.
+It allows following properties
+name--we can change the name of the column in the databse Table.
+length--we can change length of column mostly used in String.
+nullable--used to specify whether null values are allowed or not.default value is true i.e. null 	values are allowed by default.
+	If null should be avoided then set nullable=false.
+unique--It is to specify whether duplicate values are allowed or not.
+	The default value for unique is false i.e duplicates are allowed by default.
+	To only allow unique values set unique=true.
+
+----------------------------------------------------------------------------
+22. Persistence.xml 
+It is a standard configuration file.
+It should be included in META INF folder inside the resources folder. 
+The persistence.xml file must define our persistence unit name. This file can be accessed only by using the persistence unit name. 
+persistent.xml file is used to configure the Hibernate application and to provide database details. 
+It is also used to configure the cache memory property for enhancing the performance of its application.
+
+The persistence file contains the following tags.
+
+<persistence-unit name="vikas">
+It is used to define a unique name using which the persistent.xml file can be accessed. 
+
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+It defines implementation of JPA.
+
+<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/demo" />
+<property name="javax.persistence.jdbc.user" value="root" />
+<property name="javax.persistence.jdbc.password" value="root" />
+This property specifies the driver which needs to be loaded and registered.
+It is used to specify the database url and database name.
+This used to specify the username and password of the database.
+
+ <property name="hibernate.show_sql" value="true" />
+This user to display all the queries executed internally on the control. If you do not want to execute the SQL enquiries to be displayed then make the values as false.
+
+ <property name="hibernate.hbm2ddl.auto" value="update" />
+ This property is responsible for automatic table creation. If this property is removed from the persistence.xml file, table will not be created automatically. In such case we will have to create the table manually.
+value="create"----each time new table will be created.If there is any old data with same name,it will be deleted.
+value="update"---if table is not present, then it will create the table and update the values.
+					if table is already present then it will only update the table.
+
+<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+It specifies to java application to tell which database we are using.so that hibernate can generate appropriate type of sql queries.
