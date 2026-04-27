@@ -141,3 +141,4 @@ value="update"---if table is not present, then it will create the table and upda
 
 <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
 It specifies to java application to tell which database we are using.so that hibernate can generate appropriate type of sql queries.
+
