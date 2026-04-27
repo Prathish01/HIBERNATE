@@ -65,4 +65,7 @@ Rules to create an Entity class
 --class should have public zero parameterized constructor or public default constructor.
 --for every variable of entity class there should be public getter and setter methods.
 
-===================================================================================================
+===================================================================================================\
+
+
+
