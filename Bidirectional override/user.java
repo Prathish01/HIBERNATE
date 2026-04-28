@@ -8,6 +8,8 @@ import jakarta.persistence.OneToOne;
 public class user 
 {
 	@Id
+
+
 	
 private int UserId;
 private String UserName;
