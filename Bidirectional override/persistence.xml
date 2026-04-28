@@ -4,6 +4,7 @@
 
     <persistence-unit name="development">
 
+      
         <class>com.jspiders.hibernate.Student</class>
 
         <properties>
