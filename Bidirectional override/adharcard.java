@@ -6,6 +6,8 @@ import jakarta.persistence.OneToOne;
 @Entity
 public class Adharcard 
 { 
+
+	
 	@Id
 	private int AadharId;
 	private long AadharNumber;
