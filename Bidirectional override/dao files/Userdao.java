@@ -8,6 +8,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+
 public class UserDao 
 {
 	  static EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
