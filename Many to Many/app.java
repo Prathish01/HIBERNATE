@@ -3,6 +3,7 @@ package com.hibernate.manyman;
 import com.hibernate.dto.coursedto;
 import com.hibernate.dto.studentdto;
 
+
 /**
  * Hello world!
  */
