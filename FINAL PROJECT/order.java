@@ -4,11 +4,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
+	
 public class order 
 {
+	
 @Id
 private int orderid;
+	
 private String orderdate;
+	
 public int getOrderid() {
 	return orderid;
 }
