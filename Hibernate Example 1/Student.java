@@ -8,11 +8,14 @@ import javax.persistence.Id;
 @Entity
 public class Student {
 @Id
+	
 
 int stuid;
 String name;
+	
 double marks;
 long phono;
+	
 
 	public Student(int stuid,String name, double marks, long phono) {
 		// TODO Auto-generated constructor stub
