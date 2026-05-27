@@ -7,14 +7,18 @@ import jakarta.persistence.Id;
 public class customer 
 {
 	@Id
+	
 	private int customerid;
 	private String name;
 	private String email;
 	private String address;
 	public int getCustomerid() {
+		
 		return customerid;
 	}
-	public void setCustomerid(int customerid) {
+	
+	public void setCustomerid(int customerid)
+	{
 		this.customerid = customerid;
 	}
 	public String getName() {
