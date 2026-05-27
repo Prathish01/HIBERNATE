@@ -8,10 +8,15 @@ public class Employee {
 @Id
 	
 int empid;
+	
 String name;
+	
 int sal;
+	
 long phono;
+	
 String email;
+	
 public Employee(int empid,String name, int sal, long phono, String email) {
 	
 		// TODO Auto-generated constructor stub
