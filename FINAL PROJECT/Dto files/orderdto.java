@@ -4,12 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
+	
 public class products 
 {
+	
 @Id
 private int productid;
+	
 private String productname;
-public int getProductid() {
+	
+public int getProductid() 
+	{
 	return productid;
 }
 public void setProductid(int productid) {
