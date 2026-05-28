@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
+	
 public class student 
 {
+	
 	@Id
 	private int studentid;
 	private String age;
