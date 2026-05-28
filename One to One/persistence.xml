@@ -6,8 +6,10 @@
 
         <class>com.jspiders.hibernate.Student</class>
 
-        <properties>
+        
+      <properties>
 
+        
             <!-- JDBC -->
             <property name="jakarta.persistence.jdbc.driver"
                       value="com.mysql.cj.jdbc.Driver"/>
