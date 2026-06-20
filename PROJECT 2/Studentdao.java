@@ -6,8 +6,10 @@ package hibernate.dao;
 	public class Studentdao {
 
 	    @Id
+		
 	    private int StudentId;
 
+		
 	    private String name;
 	    private String email;
 	    private String contact;
