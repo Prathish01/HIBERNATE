@@ -15,15 +15,18 @@ import jakarta.persistence.Persistence;
 
 	public static void purchaseCourse() {
 
+		
 	    sc = new Scanner(System.in);
 	    EntityManagerFactory emf = Persistence.createEntityManagerFactory("development");
 	    EntityManager em = emf.createEntityManager();
+		
 	    EntityTransaction tx = em.getTransaction();
 
 	    System.out.print("Enter student id: ");
 	    int sid = sc.nextInt();
 
 	    Studentdao st = em.find(Studentdao.class, sid);
+		
 
 	    if (st == null) {
 	        System.out.println(" Student not found");
