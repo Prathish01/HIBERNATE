@@ -8,10 +8,14 @@ package hibernate.dto;
 
 	public class Coursedto 
 	{
+		
 		Scanner scn = new Scanner(System.in);
+		
 		static EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
 		static EntityManager manager = factory.createEntityManager();
+		
 		static EntityTransaction transaction = manager.getTransaction();
+		
 	public void insertdata(int courseID,String name,String fees,String duration,String type)
 	{
 	Coursedao cr = new Coursedao();
