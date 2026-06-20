@@ -4,6 +4,8 @@ package hibernate.dao;
 
 	@Entity
 	public class Coursedao 
+
+		
 	{
 		@Id
 	private int courseID;
