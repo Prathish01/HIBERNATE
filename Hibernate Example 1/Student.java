@@ -3,17 +3,17 @@ package com.jsp.hibernate_first;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
-
 @Entity
 public class Student {
 @Id
 	
 
 int stuid;
+	
 String name;
 	
 double marks;
+	
 long phono;
 	
 
