@@ -7,9 +7,12 @@ import javax.persistence.Id;
 public class Employee {
 @Id
 	
+	
 int empid;
 	
+	
 String name;
+
 	
 int sal;
 	
