@@ -4,15 +4,19 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 //import jakarta.persistence.OneToOne;
 @Entity
+	
 public class User {
 	@Id
+	
 	private int userId;
 	private String username;
 	private String dateofbirth;
 	private String email;
 	private String address;
 	private long Contact;
+	
 	@OneToOne
+	
 	Adharcard card;
 	public Adharcard getCard() {
 		return card;
