@@ -7,6 +7,8 @@ import jakarta.persistence.EntityManager;
 	import jakarta.persistence.EntityTransaction;
 	import jakarta.persistence.Persistence;
 
+
+
 	public class AdharDao {
 		 static EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
 		 static EntityManager manager = factory.createEntityManager();
