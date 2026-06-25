@@ -7,6 +7,8 @@ import jakarta.persistence.OneToOne;
 public class Adharcard 
 { 
 
+
+	
 	
 	@Id
 	private int AadharId;
