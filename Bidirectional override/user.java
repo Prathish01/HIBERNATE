@@ -5,8 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 @Entity
-public class user 
+
+	
+	public class user 
+
 {
+	
 	@Id
 
 
