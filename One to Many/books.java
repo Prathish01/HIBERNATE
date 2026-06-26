@@ -3,9 +3,12 @@ package com.hibernate.dao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+
 @Entity
+	
 public class books 
 {
+	
 @Id
 private int bookId;
 private String title;
