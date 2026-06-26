@@ -3,9 +3,11 @@ package com.hibernate.mtom;
 import com.hibernate.dto.booksdto;
 import com.hibernate.dto.librarydto;
 
+
 /**
  * Hello world!
  */
+
 public class App {
     public static void main(String[] args) {
 //    	librarydto.insertdata(1, "Central Library", "New York");
