@@ -4,12 +4,16 @@
 
     <persistence-unit name="development">
 
+      
         <!-- Your entity classes -->
         <class>com.hibernate.dto.library</class>
         <class>com.hibernate.dto.Book</class>
+      
 
         <properties>
             <!-- JDBC -->
+
+          
             <property name="jakarta.persistence.jdbc.driver"
                       value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url"
@@ -25,6 +29,7 @@
             <property name="hibernate.format_sql" value="true"/>
         </properties>
 
+      
     </persistence-unit>
 
 </persistence>
