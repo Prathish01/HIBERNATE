@@ -10,12 +10,16 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+
 public class librarydto 
+	
 {
+	
 	static EntityManagerFactory factory = Persistence.createEntityManagerFactory("development");
 	static EntityManager manager = factory.createEntityManager();
 	static EntityTransaction transaction = manager.getTransaction();
 public static void insertdata(int libraryId,String libraryName,String location)
+	
 {
 	library lib = new library();
 	lib.setLibraryId(libraryId);
@@ -24,6 +28,8 @@ public static void insertdata(int libraryId,String libraryName,String location)
 	transaction.begin();
 	manager.persist(lib);
 	transaction.commit();
+
+	
 }
 public static void readdata(int libraryId)
 {
